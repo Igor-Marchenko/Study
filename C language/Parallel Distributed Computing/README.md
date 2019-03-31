@@ -1,0 +1,1 @@
+This lab in "Parallel Distributed Computings" is a little example of concurrency in a C language which uses mutexes, conditional variables and semaphores. The are two ways to output the result of the program: in a log file or on the screen (after uncommenting the "printf()" function calls).
