@@ -1,0 +1,1 @@
+This lab in "Object Oriented Programming" provides a realisation of a parameterized class, iterator for the class and work with the class.

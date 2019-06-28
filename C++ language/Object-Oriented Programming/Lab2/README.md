@@ -1,0 +1,1 @@
+This lab in "Object Oriented Programming" creates a simple database.

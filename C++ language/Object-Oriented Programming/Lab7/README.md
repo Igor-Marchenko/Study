@@ -1,0 +1,1 @@
+This lab in "Object Oriented Programming" provides a realisation of a text classifier with the usage of a "N-Grams".

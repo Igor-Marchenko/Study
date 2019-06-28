@@ -1,0 +1,51 @@
+#include"Database.h"
+
+int main(){
+	Database db;
+	db.LoadFromFile("employees.csv");
+	std::cout << "Filling the Database from the file\n\n" << std::endl;
+	db.DisplayAll();
+	std::cout << "\nAdding subordinates to the managers\n\n" << std::endl;
+	db.ArrangeSubordinates();
+	db.DisplayAll();
+	Employee employee("Jack", "Ritch", 25, 8);
+	employee.SetSalary(1300);
+	employee.SetDepartment("PR");
+	Employee employee1("Jacob", "Flitch", 38, 9);
+	employee1.SetSalary(1550);
+	employee1.SetDepartment("IT");
+	Manager manager("Henry", "Crap", 32, 10);
+	manager.SetSalary(1650);
+	manager.SetDepartment("PR");
+	Manager manager1("Harry", "Oldberg", 41, 10);
+	manager1.SetSalary(1400);
+	manager1.SetDepartment("IT");
+	db.HireEmployee(&employee);
+	db.HireEmployee(&employee1);
+	db.HireEmployee(&manager);
+	db.HireEmployee(&manager1);
+	std::cout << "\nDatabase after hiring new people\n\n" << std::endl;
+	db.DisplayAll();
+	db.ArrangeSubordinates();
+	std::cout << "\nAdding subordinates to the managers\n\n" << std::endl;
+	db.DisplayAll();
+	std::cout << "\nPeople in PR department:\n\n" << std::endl;
+	db.DisplayDepartmentEmployees("PR");
+	std::cout << "\nFiring person with id " << 8 << "\n\n" << std::endl;
+	db.FireEmployee(8);
+	db.DisplayAll();
+	std::cout << "\nEveryone, who has salary less then 1600:\n\n" << std::endl;
+	std::vector<Person*> rs = db.SQL("salary", "lt", "1600");
+	db.ShowRecordSet(rs);
+	std::cout << "\nEveryone, whose age is greater then 35:\n\n" << std::endl;
+	std::vector<Person*> rs1 = db.SQL("age", "gt", "35");
+	db.ShowRecordSet(rs1);
+	std::cout << "\nEveryone, who works in IT department:\n\n" << std::endl;
+	std::vector<Person*> rs2 = db.SQL("department", "eq", "IT");
+	db.ShowRecordSet(rs2);
+	std::cout << "\nEveryone, whose id is less than 8:\n\n" << std::endl;
+	std::vector<Person*> rs3 = db.SQL("id", "lt", "8");
+	db.ShowRecordSet(rs3);
+	system("pause");
+	return 0;
+}

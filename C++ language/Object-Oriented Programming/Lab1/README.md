@@ -1,0 +1,1 @@
+This lab in "Object Oriented Programming" creates vector from a string line and provides actions with the vector.

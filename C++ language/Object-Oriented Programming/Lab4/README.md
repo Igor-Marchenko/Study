@@ -1,0 +1,1 @@
+This lab in "Object Oriented Programming" provides a realisation of a Tree building and manipulations with this Tree.

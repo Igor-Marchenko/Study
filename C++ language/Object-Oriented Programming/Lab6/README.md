@@ -1,0 +1,1 @@
+This lab in "Object Oriented Programming" provides a realisation of a Database. Lab uses polimorphic classes and parameterized containers from the C++ standart library.
